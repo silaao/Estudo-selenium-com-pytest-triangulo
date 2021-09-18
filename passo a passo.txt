@@ -1,0 +1,16 @@
+Passo a Passo
+Pelo terminal: 
+1. Instalar o jinja2 `pip install jinja2`
+2. Instalar o Flask `pip install flask`
+3. Instalar o pytest `pip install pytest`
+4. Instalar o pytest `pip install selenium` 
+5. Executar o Flask `py run.py`
+6. Executar os testes com: `pytest -v`
+
+Obs 1: 
+Como utilizei o selenium com o navegador Google Chrome para a automatização, precisei baixar o Cromedriver.exe disponível em “ https://chromedriver.chromium.org/downloads” e movê-lo para a pasta raiz da instalação do python, no meu caso por exemplo:  “C:\Users\SILAS\AppData\Local\Programs\Python\Python39”.
+
+Obs2: 
+Utilizei o template jinja2 para o front-end com python;
+Flask como framework web;
+Framework Pytest para testes unitários;

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <title>App Triângulo</title>
+</head>
+
+<body>
+  <div class="container py-4 my-4">
+    <div class="row text-center">
+      <h2>Questão 09</h2>
+      <p class="text-justify">Dados os três lados de um triângulo, o programa informará se o triângulo é equilátero,
+        isósceles ou escaleno. Lembre-se que os lados só formam um triângulo se o comprimento de um lado for sempre
+        menor do que a soma dos outros dois (o programa deve exibir uma mensagem de erro caso essa propriedade não seja
+        satisfeita)</p>
+    </div>
+
+    <form 
+      method="POST"
+      action="/"
+    >
+      {% if exibe == 'erro' %}
+        <div class="row my-4">
+          <div class="col-md-12 text-center">
+            <h4 class="text-danger">Não é um triângulo</h4>
+            <p class="text-danger">Informe valores corretos</p>
+          </div>
+        </div>
+      {% elif exibe == 'triangulo' %}
+        <div class="row my-4">
+          <div class="col-md-12 text-center">
+            <h4>Triângulo {{formato}}</h4>
+            <img width="200px" class="img-thumbnail"
+              src="{{formatoUrl}}" alt="">
+            
+            <p>V1: {{vertice1}} &nbsp; V2: {{vertice2}} &nbsp; V3: {{vertice3}} &nbsp;</p>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="row mt-3">
+        <div class="col-md-4">
+          <input name="vertice-1" class="form-control mt-2" type="number" min="1" step="0.01" placeholder="Vértice 01" required>
+        </div>
+
+        <div class="col-md-4">
+          <input name="vertice-2" class="form-control mt-2" type="number" min="1" step="0.01" placeholder="Vértice 02" required>
+        </div>
+
+        <div class="col-md-4">
+          <input name="vertice-3" class="form-control mt-2" type="number" min="1" step="0.01" placeholder="Vértice 03" required>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-12 text-center">
+          <button name="botao-id" type="submit" class="btn btn-lg btn-outline-success">Identificar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+
+</html>
